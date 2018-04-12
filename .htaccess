@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^Bitcoin[/]?$ coin/bitcoin.html
+RewriteCond %{HTTP_HOST} ^current-price\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://current-price.com/$1 [R,L]
+
