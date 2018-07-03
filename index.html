@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind|Open+Sans:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/footable.bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/footable.bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
     <!--[if lt IE 9]>
@@ -39,73 +39,22 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <!-- <li class="active"><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li> -->
           <li class="active"><a href="#/!">Home</a></li>
-          <li><a href="#!about">About</a></li>
-          <div ng-view></div> 
+          <li><a href="#about">About</a></li>
         </ul>
         <div class="input-group">
           <input type="search" data-ng-model="query" class="form-control input" placeholder="Search" autofocus="autofocus" />
         </div>        
       </div><!-- /.navbar-collapse -->
+      
+      <!-- Toggle Button -->
+      <a class="btn btn-sm text btn-night"> Night Mode</a>
     </nav>
-
-    <!-- Toggle Button -->
-    <a class="btn btn-sm text btn-night"> Night Mode</a>
 
     <div class="container" >
       <div class="row">
-        <div data-ng-controller="currentpriceCtrl">
+          <div ng-view></div>
 
-          <!-- DATA FEED -->
-          <div class="col-xs-12 col-md-2table-responsive">
-            <table class="table table-striped table-hover footable">
-              <thead>
-                <tr>
-                  <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'rank*1'; reverseSort = !reverseSort">Rank <span data-ng-show="orderByField == 'rank*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'name'; reverseSort = !reverseSort">Name <span data-ng-show="orderByField == 'name'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th><a href="" data-ng-click="orderByField = 'symbol'; reverseSort = !reverseSort">Symbol <span data-ng-show="orderByField == 'symbol'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th><a href="" data-ng-click="orderByField = 'price_usd*1'; reverseSort = !reverseSort">USD <span data-ng-show="orderByField == 'price_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th><a href="" data-ng-click="orderByField = 'price_btc*1'; reverseSort = !reverseSort">BTC <span data-ng-show="orderByField == 'price_btc*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'market_cap_usd*1'; reverseSort = !reverseSort">MKC USD <span data-ng-show="orderByField == 'market_cap_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th><a href="" data-ng-click="orderByField = 'percent_change_24h*1'; reverseSort = !reverseSort">24h <span data-ng-show="orderByField == 'percent_change_24h*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                  <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'percent_change_7d*1'; reverseSort = !reverseSort">7d <span data-ng-show="orderByField == 'percent_change_7d*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-
-                  
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr data-ng-repeat="currentprice in crypto.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:query | orderBy:orderByField:reverseSort">
-                  <td>{{currentprice.rank | number}}</td>
-                  <td><a href="coin/{{currentprice.id}}.html"></a>{{currentprice.name}}</td>
-                  <td>{{currentprice.symbol}}</td>
-                  <td>{{currentprice.price_usd}}</td>
-                  <td>{{currentprice.price_btc}}</td>
-                  <td>{{currentprice.market_cap_usd}}</td>
-                  <td>{{currentprice.percent_change_24h}}%</td>
-                  <td>{{currentprice.percent_change_7d}}%</td>
-                </tr>
-              </tbody>
-            </table>
-            <hr />
-          </div><!-- end .col -->
-
-          <!-- PAGINATION -->
-          <div class="col-md-8 col-xs-10">
-            <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="itemsPerPage"></pagination>
-          </div><!-- end .col -->
-
-          <!-- SELECT NUMBER -->
-          <div class="col-md-4 col-xs-2">
-            View 
-            <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" class="selectpicker input-small" data-style="btn-primary">
-              <option>3</option><option>5</option><option selected>10</option><option>20</option><option>30</option><option>40</option><option>50</option><option>100</option><option>500</option><option>1000</option><option>1500</option>
-            </select>
-          </div><!-- end .col -->
-
-        </div><!-- end currentpriceCtrl -->
       </div><!-- end .row -->
     </div><!-- end .container -->
 
@@ -113,8 +62,8 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-xs-12"><small>&copy; 2018 <a href="https://current-price.com">current-price.com</a></small></div>
-          <div class="col-md-2 col-xs-12"><small>Code by:</small> <a href="http://jasonleewilson.com" target="_blank"><img class="logo-promotion" src="assets/img/logo-jasonleewilson.png" alt="Coded by jasonleewilson.com"></a></div>
+          <div class="col-md-10 col-xs-8"><small>&copy; 2018 <a href="https://current-price.com">Current-Price.com</a></small></div>
+          <div class="col-md-2 col-xs-4"><small>Code by:</small> <a href="http://jasonleewilson.com" target="_blank"><img class="logo-promotion" src="assets/img/logo-jasonleewilson.png" alt="Coded by jasonleewilson.com"></a></div>
         </div>
       </div>
     </footer>
@@ -122,6 +71,7 @@
     <!-- <a class="github-fork-ribbon left-bottom fixed" href="https://github.com/jasonleewilson/angularjs-json-fetching" target="_blank" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a> -->
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.2/angular-scroll.min.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="/assets/js/app.js"></script>

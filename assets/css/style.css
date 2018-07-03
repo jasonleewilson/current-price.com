@@ -109,6 +109,8 @@ body {
 
 .logo-promotion {width: 20px;}
 
+table.footable>tbody>tr>td, table.footable>tbody>tr>th { display: table-cell !important; }
+
 @media screen and (max-width: 414px) {
   .btn-night {
     right: 80px;

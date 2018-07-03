@@ -80,10 +80,10 @@ table.footable > tbody > tr.footable-empty > td {
 	text-align: center;
 	font-size: 30px;
 }
-table.footable > tbody > tr > td,
+/* table.footable > tbody > tr > td,
 table.footable > tbody > tr > th {
 	display: none;
-}
+} */
 table.footable > tbody > tr.footable-empty > td,
 table.footable > tbody > tr.footable-empty > th,
 table.footable > tbody > tr.footable-detail-row > td,
