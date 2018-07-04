@@ -1,8 +1,8 @@
-$('.footable').footable({
-  calculateWidthOverride: function() {
-  return {width: $(window).width()};
-}
-}); 
+// $('.footable').footable({
+//   calculateWidthOverride: function() {
+//   return {width: $(window).width()};
+// }
+// }); 
 
 $( ".btn-night" ).click(function() {
   $( "body" ).toggleClass('night-mode');
