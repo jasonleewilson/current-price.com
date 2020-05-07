@@ -1,53 +1,53 @@
 <!-- <h1>Home Page</h1> -->
 <div data-ng-controller="currentpriceCtrl">
 
-        <!-- DATA FEED -->
-        <!-- <div class="col-xs-12 col-md-2 table-responsive"> -->
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped table-hover footable">
-            <thead>
-              <tr>
-                <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'rank*1'; reverseSort = !reverseSort">Rank <span data-ng-show="orderByField == 'rank*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'name'; reverseSort = !reverseSort">Name <span data-ng-show="orderByField == 'name'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th><a href="" data-ng-click="orderByField = 'symbol'; reverseSort = !reverseSort">Symbol <span data-ng-show="orderByField == 'symbol'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th><a href="" data-ng-click="orderByField = 'price_usd*1'; reverseSort = !reverseSort">USD <span data-ng-show="orderByField == 'price_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th><a href="" data-ng-click="orderByField = 'price_btc*1'; reverseSort = !reverseSort">BTC <span data-ng-show="orderByField == 'price_btc*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'market_cap_usd*1'; reverseSort = !reverseSort">MKC USD <span data-ng-show="orderByField == 'market_cap_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'percent_change_24h*1'; reverseSort = !reverseSort">24h <span data-ng-show="orderByField == 'percent_change_24h*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
-                <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'percent_change_7d*1'; reverseSort = !reverseSort">7d <span data-ng-show="orderByField == 'percent_change_7d*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>                
-              </tr>
-            </thead>
+  <!-- DATA FEED -->
+  <!-- <div class="col-xs-12 col-md-2 table-responsive"> -->
+  <div class="col-xs-12 table-responsive">
+    <table class="table table-striped table-hover footable">
+      <thead>
+        <tr>
+          <th data-breakpoints="xs"><a href="" data-ng-click="orderByField = 'rank*1'; reverseSort = !reverseSort">Rank <span data-ng-show="orderByField == 'rank*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'name'; reverseSort = !reverseSort">Name <span data-ng-show="orderByField == 'name'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th><a href="" data-ng-click="orderByField = 'symbol'; reverseSort = !reverseSort">Symbol <span data-ng-show="orderByField == 'symbol'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th><a href="" data-ng-click="orderByField = 'price_usd*1'; reverseSort = !reverseSort">USD <span data-ng-show="orderByField == 'price_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th><a href="" data-ng-click="orderByField = 'price_btc*1'; reverseSort = !reverseSort">BTC <span data-ng-show="orderByField == 'price_btc*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'market_cap_usd*1'; reverseSort = !reverseSort">MKC USD <span data-ng-show="orderByField == 'market_cap_usd*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'percent_change_24h*1'; reverseSort = !reverseSort">24h <span data-ng-show="orderByField == 'percent_change_24h*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>
+          <th class="hidden-xs hidden-sm"><a href="" data-ng-click="orderByField = 'percent_change_7d*1'; reverseSort = !reverseSort">7d <span data-ng-show="orderByField == 'percent_change_7d*1'"><i class="fa fa-angle-down" aria-hidden="true" data-ng-show="!reverseSort"></i><i class="fa fa-angle-up" aria-hidden="true" data-ng-show="reverseSort"></i></span></a></th>                
+        </tr>
+      </thead>
 
-            <tbody>
-              <tr data-ng-repeat="currentprice in crypto.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:query | orderBy:orderByField:reverseSort">
-                <td>{{currentprice.rank | number}}</td>
-                <td class="hidden-xs hidden-sm"><a href="coin/{{currentprice.id}}.html"></a>{{currentprice.name}}</td>
-                <td>{{currentprice.symbol}}</td>
-                <td>{{currentprice.price_usd}}</td>
-                <td>{{currentprice.price_btc}}</td>
-                <td class="hidden-xs hidden-sm">{{currentprice.market_cap_usd}}</td>
-                <td class="hidden-xs hidden-sm">{{currentprice.percent_change_24h}}%</td>
-                <td class="hidden-xs hidden-sm">{{currentprice.percent_change_7d}}%</td>
-              </tr>
-            </tbody>
-          </table>
-          <hr />
-        </div><!-- end .col -->
+      <tbody>
+        <tr data-ng-repeat="currentprice in crypto.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:query | orderBy:orderByField:reverseSort">
+          <td>{{currentprice.rank | number}}</td>
+          <td class="hidden-xs hidden-sm"><a href="coin/{{currentprice.id}}.html"></a>{{currentprice.name}}</td>
+          <td>{{currentprice.symbol}}</td>
+          <td>{{currentprice.price_usd}}</td>
+          <td>{{currentprice.price_btc}}</td>
+          <td class="hidden-xs hidden-sm">{{currentprice.market_cap_usd}}</td>
+          <td class="hidden-xs hidden-sm">{{currentprice.percent_change_24h}}%</td>
+          <td class="hidden-xs hidden-sm">{{currentprice.percent_change_7d}}%</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div><!-- end .col -->
 
-        <!-- PAGINATION -->
-        <div class="col-md-8 col-xs-12">
-          <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="itemsPerPage"></pagination>
-        </div><!-- end .col -->
+  <!-- PAGINATION -->
+  <div class="col-md-8 col-xs-12">
+    <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" items-per-page="itemsPerPage"></pagination>
+  </div><!-- end .col -->
 
-        <!-- SELECT NUMBER -->
-        <div class="col-md-4 col-xs-12">
-          View 
-          <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" class=" input-small" data-style="btn-primary">
-            <option>3</option><option>5</option><option selected>10</option><option>20</option><option>30</option><option>40</option><option>50</option><option>100</option><option>500</option><option>1000</option><option>1500</option>
-          </select>
-        </div><!-- end .col -->
+  <!-- SELECT NUMBER -->
+  <div class="col-md-4 col-xs-12">
+    View 
+    <select ng-model="viewby" ng-change="setItemsPerPage(viewby)" class=" input-small" data-style="btn-primary">
+      <option>3</option><option>5</option><option selected>10</option><option>20</option><option>30</option><option>40</option><option>50</option><option>100</option><option>500</option><option>1000</option><option>1500</option>
+    </select>
+  </div><!-- end .col -->
 
-      </div><!-- end currentpriceCtrl -->
+</div><!-- end currentpriceCtrl -->
 
 
       <script src="../../assets/js/footable.min.js"></script>
